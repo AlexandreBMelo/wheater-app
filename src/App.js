@@ -54,46 +54,54 @@ function App() {
     : null;
 
   return (
-    <div className="App">
+    <div className={`App ${weatherClass}`}>
       <header>
-        <h1>Weather App</h1>
-      </header>
-
-      <div className="search-box">
+        <div id="title">
+        <h1>Pesquisa de clima</h1>
+        </div>
+        <div className = "search-box">
         <input
+          id="city-input"
           type="text"
-          value={city}
           placeholder="Digite a cidade"
+          value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button onClick={handleSearch}>Buscar</button>
-      </div>
-
-      {loading && <p>Carregando...</p>}
-      {error && <p>{error}</p>}
-
-      {weather && (
-        <div className={`weather-box ${weatherClass}`}>
-          <div className="location-box">
-            <h2>{weather.name}, {weather.sys.country}</h2>
-            <p>{new Date().toLocaleDateString()}</p>
-          </div>
-
-      
-          {weatherIconUrl && (
-            <img
-              src={weatherIconUrl}
-              alt={weather.weather[0].description}
-              className="weather-icon"
-            />
-          )}
-
-          <div className="temp">{Math.round(weather.main.temp)}°C</div>
-          <div className="weather">{weather.weather[0].description}</div>
+        <button id="search-btn" 
+        onClick={handleSearch}>Buscar</button>
         </div>
-      )}
+      </header>
+
+      <div className="container">
+        <div>
+          <p>Você pode e deve pesquisar sua cidade, para te trazermos o clima dela, em nosso app 100% gratuito</p>
+        </div>
+        {weather && (
+          <div className="weather-box">
+            <div className="location-box">
+              <h2>{weather.name}, {weather.sys.country}</h2>
+              <p>{new Date().toLocaleDateString()}</p>
+            </div>
+
+            {loading && <p>Carregando...</p>}
+            {error && <p style={{ color: "red" }}>{error}</p>}
+
+            {weatherIconUrl && (
+              <img
+                src={weatherIconUrl}
+                alt={weather.weather[0].description}
+                className="weather-icon"
+              />
+            )}
+
+            <div className="temp">{Math.round(weather.main.temp)}°C</div>
+            <div className="weather">{weather.weather[0].description}</div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default App;
+

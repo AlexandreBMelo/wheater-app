@@ -1,39 +1,96 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {         
   display: flex;
+  align-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-start; 
+  background-size: cover;     
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
+/* Clima frio */
 .cold {
-  background-color: #00f;
-  padding: 50x 50px 50px 50px;
-  color: #fff;
+  background-image: url("assets/rainy_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #000000;
 }
+
+/* Clima quente */
 .hot {
   background-color: #ff4500;
   color: #fff;
 }
+
+/*Container*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+}
+
+header {
+
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#title {
+  flex-direction: column;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  width: 100%;  
+
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+}
+
+#search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 70%;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#search-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 10px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+#search-btn:hover {
+  background-color: #016bdd;
+  color: white;
+  cursor: pointer;
+}
+
