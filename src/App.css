@@ -13,7 +13,6 @@
   height: 100vh;
 }
 
-/* Clima frio */
 .cold {
   background-image: url("assets/rainy_background.jpg");
   background-position: center;
@@ -22,13 +21,14 @@
   color: #000000;
 }
 
-/* Clima quente */
 .hot {
-  background-color: #ff4500;
-  color: #fff;
+  background-image: url("assets/sunny_background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #000000;
 }
 
-/*Container*/
 .container {
   display: flex;
   flex-direction: column;
